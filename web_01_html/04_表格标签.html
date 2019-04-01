@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格标签</title>
+		<!--表格标签：
+			table   表格标签
+			tr：行
+			td：单元格
+			th：表头
+			属性：border-》边框线
+			属性：width/height
+			背景色：bgcolor
+			对其方式：align边框线之间的距离
+			属性：cellspacing-》单元格边沿和
+			      cellpadding：内边距-》单元格边缘与内容之间的距离
+			      
+			      
+			      
+			单元格的合并：
+			     行合并：rowspan
+			     列合并：  cospan
+			     
+			     
+			表格标签：默认拆分
+			         thread：头
+			         tbody：体
+			         tfoot：脚table标签，将table标签中的每一行的内容用tbody包含起来，荣用户体验更好
+		<!--css样式-->
+		<style>
+			/*标签选择器*/
+			tr{
+				/*文本左右对齐方式*/
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<!--表格的标题标签-->
+			<capton>学生信息表</capton>
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>学号</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>张三</td>
+				<td>01</td>
+				
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>李四</td>
+				<td>02</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>王五</td>
+				<td>03</td>				
+			</tr>
+		</table>
+	</body>
+</html>
