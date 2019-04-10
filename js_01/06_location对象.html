@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>location对象</title>
+		<script>
+			/**
+			 * location对象
+			 * href：改变当前url的地址，实现跳转
+			 * reload():重新刷新当前页面
+			 */
+			function testHref(){
+				window.location.href="05_BOM之Windows对象.html";
+			}
+			
+			//servlet  --->jsp--->MVC
+			
+			
+			//reload:重新刷新页面
+			function load(){
+				window.location.reload();
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="调转" onclick="testHref()" />
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js的表单验证</title>
+		<!--
+			对于表单的验证是非常重要的：需要掌握（但是注意正则规则我们能看懂就可以了）
+			定义正则规则：
+			用户名：4-14位的数字或者字母组成
+			密码：6-16位的数字或者字母组成
+			确认密码和密码一致
+			邮箱的规则：
+			   数字或者字母@数字或者字母（.cn/.com.cn/.com/...）
+		-->
+		<script>
+			//校验用户名
+			function checkUserName(){
+			//获取用户名的内容
+			var username=document.getElementById("username").value;
+			//定义正则规则：用户名：4-14位的数字或者字母组成
+			var reg=/^[a-zA-Z-0-9]{4-14}$/;
+			//获取id="name_span"的span标签对象
+			var nameSpan=document.getElementById("name_span").value;
+			//判断用户名的内容和正则匹配
+			if(reg.test(username)){
+				//成功：
+				//设置nameSpan的innerHTML属性
+				nameSpan.innerHTML="当前用户名可用".fontcolor("green");
+				return true;
+			}else{
+				nameSpan.innerHTML="当前用户名不可用".fontcolor("red");
+				return false;
+			}
+			}
+			
+			//校验密码输入框
+			function checkPwd(){
+				//获取密码内容
+				document.getElementById("pwd").value;
+				//密码：6-16位的数字或者字母组成
+				var reg=/^[a-zA-Z-0-9]{6-16}$/
+				//获取id="pwd_span"标签对象
+				var pwdSpan=document.getElementById("pwd_span").value;
+				//开始检验
+				if(reg.test(pwd)){
+					pwdSpan.innerHTML="当前密码可用".fontcolor("green");
+					return true;
+			}else{
+				pwdSpan.innerHTML="当前密码不可用".fontcolor("red");
+				return false;
+			}
+				}
+			
+		//确认密码框
+		function checkRePwd(){
+			//获取密码内容
+			var pwd=document.getElementById("pwd").value;
+			//id="repwd"密码框内容
+			var rePwd=document.getElementById("repwd").value;
+			//id="repwd_span"
+			var rePwdSpan=document.getElementById("repwd_span").value;
+			if(pwd.valueOf(rePwd)){
+				rePwdSpan.innerHTML="两次输入的密码一致".fontcolor("greenyellow");
+				return true;
+			}else{
+				rePwdSpan.innerHTML="两次输入的密码不一致".fontcolor("red");
+				return false;
+			}
+			
+		}
+		
+		//邮箱校验
+		function checkEmail(){
+			//获取邮箱内容
+			var email=document.getElementById("email").value;
+			//数字或者字母@数字或者字母（.cn/.com.cn/.com/...）
+			var reg=/^[a-zA-Z0-9+@[a-zA-Z0-9]]+(\.[a-zA-Z]{2,3}){1,2}$/;
+			//获取id="email_span"的span标签对象
+			var emailSpan=document.getElementById("email_span");
+			if(reg.test(email)){
+				emailSpan.innerHTML="当前邮箱格式可用".fontcolor("greenyellow");
+				return true;
+			}else{
+				emailSpan.innerHTML="当前邮箱格式不可用".fontcolor("red");
+				return false;
+			}			
+		}
+		
+		//最后需要去校验全部的表单，如果都通过，才能提交成功，否则失败
+		function checkAll(){
+			if(checkUserName()&&checkRePwd()&&checkEmail()&&checkPwd()){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<!--
+			onsubmit:表单提交是否能成功：true表示成功、false表示失败
+		-->
+		<form action="backend.html" method="post" onsubmit="checkAll()">
+			用&nbsp;户&nbsp;名：&nbsp;<input type="text"  id="username" onblur="checkUserName()"/><span id="name_span"></span>
+			<br />
+			密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;<input type="password" id="pwd"  onblur="checkRePwd()"/><span id="pwd_span"></span>
+			<br />
+			确认密码：<input type="password" id="repwd"  onblur="checkRePwd()"/><span id="repwd_span"></span>
+			<br />
+			邮箱：<input type="text" id="email" /><span id="email_span" onblur="checkEmail()"></span>
+			<br />
+			<input type="submit" value="注册" />
+		</form>
+		
+	</body>
+</html>

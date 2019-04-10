@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>初识jq</title>
+		<!--
+        	作者：offline
+        	时间：2019-04-04
+        	1.Jqquery其实就是js的封装，封装js的代码库
+        	作用：write less,do more
+        	2.Jquery的开发步骤：
+        	  1）导入js库
+        	  2）页面加载
+        	  
+        -->
+		<script>
+			function load(){
+				alert("load 111");
+			}
+			function load(){
+				alert("load 222");
+			}
+			//Jq的方式
+			//方式1：
+			jQuery(document).ready(function(){
+				alert("jQuery(document).ready(function()");)
+			});
+			
+			//方式2：
+			$(document).ready(function(){
+				alert("jQuery(document).ready(function()");)
+			});
+			
+			//方式3：
+			$(function(){
+				alert("jQuery(document).ready(function()")
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

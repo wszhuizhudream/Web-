@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js正则表达式</title>
+		<!--
+			数量词：----这个一定要知道
+			x?:出现0次或1次
+			x+:出现1次或多次
+			x*:出现0次或多次
+			x{n}:x字符恰好出现n次
+			x{n,m}:x字符出现至少n次，但是不超过m次
+			
+			定义正则格式：
+			  var reg=/ 正则表达式/;
+			  
+			  test():用户输入的内容是否和当前规定的正则匹配
+			         ----如果匹配，返回true，否则返回false
+			js中一种弱类型语言，所以只要我们的字符串内容和正则匹配就会成功
+			如果想让js的正则规则严谨：就加上边界匹配符号
+			^:以什么开头
+			$:以什么结束--------/[^a-zA-Z0-9]{2}$/
+		-->
+		<script>
+			var str="12abc";
+			//定义一个正则
+			var reg=/[a-zA-Z0-9]{2}/;
+			if(reg.test(str)){
+				alert("条件成立");
+			}else{
+				alert("条件不成立");
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

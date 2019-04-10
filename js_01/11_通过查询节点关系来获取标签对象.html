@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通过查询节点关系来获取标签对象</title>
+		<!--
+        	作者：offline
+        	时间：2019-04-04
+        				/**
+			 * 节点关系：
+			 *   1）parentNode：父节点
+			 * 2）childNodes：当前的所有子节点
+			 * 3）firstChild：最后一个节点
+			 * 5）兄弟节点：sibling
+			 *             nextSibling：下一个兄弟节点
+			 *             previousSibling：上一个兄弟节点
+			 * 
+			 * 在节点关系：childNodes，firstChilde，lastChilde,有一个节点的类nodeType
+			 * 查看节点类型：
+			 *   空格换行：  3   #text
+			 *   标签对象：  1
+			 *   html注释：  8   #comment
+			 */
+       -->
+	</head>
+	<body>
+		<!--这个form对象就是父节点-->
+		<from>
+			<a href="#"></a><input type="text" /><input type="button" />
+		</from>
+		<form>
+			<a href="#"><img src=""/></a><input type="button" />
+		</form>
+	</body>
+			<script>
+			
+			//需求1：需要获取第一个a标签对象----返回的是一个数组通过返回的下标进行获取
+		var aNode =	document.links[0];
+		alert(aNode.nodeName);
+		
+		//需求2：获取它的父节点对象
+		var formNode=aNode.parentNode;
+		alert(formNode.nodeName);
+		
+		//需求3：需要获取当前第一个form标签对象的所有子节点对象
+		var nodeList=formNode.childNodes;
+		alert(nodeList.length);
+		for(var i=0;i<nodeList.length;i++){
+			if(nodeList[i].nodeType==1){
+			document.write(nodeList[i].nodeName+",节点类型是："+nodeList[i].nodeType+"<br/>");	
+			}
+		}
+
+//需求4：通过formNode获取第一个子节点对象
+var firstNode=formNode.firstChild;
+alert(firstNode.nodeName);
+//需求5：通过formNode获取最后一个子节点对象
+var lastNode=formNode.lastChild;
+alert(lastNode.nodeName);
+
+//获取第二个a标签对象
+var aNode=document.links[1];
+alert(aNode.nodeName);
+
+//获取aNode的下一个兄弟节点
+var next=aNode.nextSibling;
+alert(next.nodeName);
+
+//获取aNode的上一个兄弟节点
+var previous=next.previousSibling;
+alert(previous.nodeName);
+		</script>
+</html>

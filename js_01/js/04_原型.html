@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js原型</title>
+		<script>
+			/**
+			 * 在js中给原型对象中添加一个方法，然后再设置对象中去创建原型对象，这个方法会自动的添加到内置对象中
+			 * 
+			 * Prototype
+			 * 
+			 * 举例：
+			 * 
+			 * Array内置对象
+			 * function Array(){
+			 *var prototype=new Prototype();
+			 * 
+			 * //自动添加过来
+			 * this.search=function(){}
+			 * }
+			 * 
+			 * //定义一个原型对象
+			 * function Prototype(){
+			 * 	this.search=function(){}
+			 * }
+			 * 
+			 * js原型属性的作用：----[这个一定要掌握]
+			 *             1）在js中所有的内置对象中，都存在原型属性：prototype
+			 *             2）在内置对象中调用原型属性，追加一个方法，这个方法会自动添加到内置对象中
+			 *             3）原型的作用：就是为了给内置对象中追加方法
+			 * 格式：内置对象.prototype。方法名=function(参数){...}
+			 * search(array,target)
+			 * max(array);
+
+			 */
+			
+			//给Array对象中追加search方法
+			Array.prototype.search=function(target){
+				//遍历数组
+				for(var i=0;i<this.length;i++){
+					if(this[i]==target){
+						return i;
+					}
+				}
+				//找不到返回-1
+					return -1;
+			}
+			//追加max方法
+			Array.prototype.max=function(){
+				//参照物
+				var max=this[0];
+				for(var i=1;i<this.length;i++){
+					if(this[i]>max){
+						max=this[i];
+					}
+				}
+				return max;
+			}
+			
+			
+			//定义数组
+			var arr=[8,67,04,85,30]
+			var index=arr.search(67);
+			document.write("位置是："+index+"<br />");
+			var max=arr.max();
+			document.write("最大值是："+max+"<br />");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

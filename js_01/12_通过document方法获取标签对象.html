@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通过document方法获取标签对象</title>
+		<script>
+			/**
+			 * 通过document方法获取标签对象
+			 * 1）getElementById（"id属性值"）;返回的是某个标签对象//id一定要唯一
+			 * 2）getElementsByName("name属性值");返回的是标签对象集合
+			 * 3）getElementsByTagName("标签名称");返回的是一个集合
+			 */
+			function init(){
+				//获取input标签对象
+				//var username=document.getElementById("user_name").value;
+				
+				//方法2：通过name属性
+				var username=document.getElementsByName("username")[0].value;
+				alert(username);
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		用户名：<input type="text" name="username" onblur="init()" id="user_name"/>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js事件编程</title>
+		
+		<!--
+			事件编程的三要素：
+			1）事件源
+			2）编写监听器
+			3）注册监听器
+			
+			js编程的分类：
+			点击相关事件：
+			  单击点击事件：onclick
+			  双击点击事件:ondbclick
+			  
+			  和焦点相关事件
+			  聚焦事件：onfocus
+			  失去焦点事件：onblur
+			  选项卡发生变化的事件：
+			  onchange事件    举例：省市联动
+			  和鼠标相关的事件
+			  鼠标经过：onmouseover
+			  鼠标移除：onmouseout
+			  当body中的内容加载完毕：页载入事件：onload事件
+			  onkeyup：按键抬起事件
+			  onleydown：用户按下键盘时触发什么事件			  
+		-->
+	</head>
+	<body>
+		<input type="button" value="点我试试"  onclick="testCilck()"/>
+		<input type="button" value="多点两下"  onclick="testDbCilck()"/>
+		<br />
+		用户名：<input type="text" id="username" onblur="testBlur()" onfocus="testFocus()" value="请输入4-14位的数字或字母"  size="20"/><span id="username_tip"></span>
+	  <br />  
+	    籍贯：
+	    <select onchange="change()" id="jiguan">
+	    	<option value="请选择">请选择</option>
+	    	<option value="陕西省">陕西省</option>
+	    	<option value="重庆市">重庆市</option>
+	    	<option value="湖南省">湖南省</option>
+	    </select>
+	    城市：
+	    <select id="city">
+	    	
+	    </select>
+	    <br />
+	    <div id="div1">这是div内容</div>
+	</body>
+			<script>
+			function testCilck(){
+				alter("我点了");
+			}
+			function testDbClick(){
+				alert("多点两下");
+			}
+			function testFocus(){
+				//确定事件：获取焦点事件
+				//操作文本输入框，获取该输入框的对象
+				var input=document.getElementById("username");
+				//设置属性
+				input.value="";
+			}
+			function testBlur(){
+				//获取文本输入框的内容
+				document.getElementById("username").value;
+				//通过id获取span标签对象
+				var span = document.getElementById("username_tip");
+				if(username!="eric"){
+					//设置span标签的innerHtml属性
+					span.innerHTML="用户可用".fontcolor("green");
+					
+				}else{
+					span.innerHTML="用户名不可用".fontcolor("red");
+				}
+			}
+			
+			
+			function change(){
+				//通过id="jiguan"获取select标签对象
+				//通过select获取选中的内容
+				document.getElementById("jiguan").value;
+				//alter(jiguan)
+				//获取id="city"所在的select标签对象
+				var city=document.getElementById("city");
+				//判断如果选中的jiguan是陕西省
+				if(jiguan=="陕西省"){
+					var arr=["西安市","咸阳市","宝鸡市"];
+					for(var i=0;i<arr.length;i++){
+						//设置城市所在的select对象的innerHTML属性
+						//<option value="">arr[i]</option>
+						city.innerHTML+="<option value='"+arr[i]+"'>"+arr[i]+"</option>";
+					}
+				}
+			}
+		</script>
+</html>

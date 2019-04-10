@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array对象</title>
+		<!--js中定义数组对象
+			注意事项：
+			1）在js中定义数组，不用担心数组角标越界的问题，自动扩容
+			2）在js中，数组是可以定义任何数据类型的
+		-->
+		<script>
+			//方式1：指定数组长度
+			var arr=new Array(3);
+			//1.1不指定长度
+			var arr=new Array();
+			//1.2指定具体的元素内容
+			var arr=new Array(true,'a',"hello",30);
+			
+			//方式2：简写方式
+			var arr=[true,'a',"hello",30];
+			
+			//需要给数组中的元素进行赋值
+			arr[0]=10;
+			arr[1]=20;
+			arr[2]=true;
+			arr[3]=30;
+			for(var i=0;i<arr.length;i++){
+				document.write(arr[i]+"&nbsp;");
+			}
+			
+			
+			/**
+			 * 两个方法：
+			 * join（str）：通过指定字符串，将数组中的内容用该字符串拼接，返回一个字符出串的值
+			 * reverse（）：将数组中的内容进行反转
+			 * 
+			 * 需求：Array对象中添加一个search(array,target)
+			 *      在array数组中查找target元素的位置
+			 *                         添加max(array)---获取最大值
+			 */
+			//定义一个数组
+			var array=["java","php","python","hadoop","c++"];
+			var str1=arr.join("-");
+			document.write(str1);
+			
+			//这是打印一个水平线
+			document.write("<hr />");
+			
+			//反转
+			var str2=arr.reverse();
+			document.write(str2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

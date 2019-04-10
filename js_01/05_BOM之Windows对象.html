@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Window对象</title>
+		<script>
+			/**
+			 * window对象中常用的方法
+			 * open("url","打开方式","打开新窗口的宽高以及设置工具栏的显示")
+			 * url：打开资源地址或者资源文件
+			 * setInterval("任务",毫秒值)--每经过多少毫秒值重复执行了
+			 * setTimeout("任务"，毫秒值)--经过多少秒之后执行一次任务
+			 * 取消定时器
+			 * clearInterval(timerId);
+			 * clearTimeout(timerId);
+			 * 弹框方法：
+			 * alter()
+			 * 	confirm():确认对话框
+			 * prompt():消息对话框和输入框
+			 * 
+			 * 
+			 */
+		function testOpen(){
+			//打开一个窗口，执行open方法
+			window.open("04_原型.html","_blank","width:400px;height=400px")
+		}
+		
+		function testInterval(){
+			taskId=window.setInterval("testOpen()",3000);//重复执行
+		}
+		function testTimeout(){
+			taskId=window.setTimeout("testOpen()",3000);//只执行一次
+		}
+		
+		//取消定时任务
+		function testClearInterval(){
+			window.clearInterval(taskId);
+		}
+		function testClearTimeout(){
+			window.clearInterval(taskId);
+		}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="open" onclick="testOpen()" />
+		<br />
+		<input type="button" value="interval" onclick="testInterval()" />
+		<br />
+		<input type="button" value="timeout" onclick="testTimeout()" />
+		<br />
+		<input type="button" value="timeout" onclick="testTimeout()" />
+		
+	</body>
+</html>

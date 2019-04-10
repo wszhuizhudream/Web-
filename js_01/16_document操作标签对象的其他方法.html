@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>document操作标签对象的其他方法 </title>
+		<script>
+			/**
+			 * 文档对象：document
+			 * 和添加元素对象相关的方法：
+			 *     createElement("标签元素名称");
+			 * 举例：创建<input/>document.createElement("input")；
+			 * setAttribute("属性名称","属性值");
+			 * 举例：元素对象.setAttribute("type","button");
+			 * <input type="button"/>
+			 * 和插入元素相关的方法：
+			 * appendChild(指定元素对象);在父节点中调用
+			 * insertBefore(新元素对象，指定元素对象);
+			 *              在指定对象的前面插入这个新对象
+			 * 和删除相关的方法：
+			 *     removeChilde(子节点对象)
+			 * 
+			 */
+			function addButton(){
+			//创建一个input标签对象
+		var input =	document.createElement("input");
+		//给当前input对象中添加属性
+		input.setAttribute("type","button");
+		input.setAttribute("value","新按钮");
+		//获取父节点对象:body
+		var bodyNode=document.getElementsByTagName("body")[0];
+		bodyNode.appendChild(input);
+		//获取id="btn"所在标签对象
+		bodyNode.insertBefore(input);
+			}
+			
+			function delButton(){
+				//获取父节点对象
+				ar bodyNode=document.getElementsByTagName("body")[0];
+				var last=bodyNode.lastChild;
+				bodyNode.removeChild(last);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="添加"  onclick="addButton()"/>
+		<input type="button" value="删除"  onclick="delButton()"/>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+</html>

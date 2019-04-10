@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>定时弹出广告</title>
+		<script>
+			/**
+			 * 广告开始隐藏
+			 *    经过3秒后，弹出广告
+			 *    再经过5秒之后，隐藏广告
+			 */
+			
+			//显示广告
+			function showAdv(){
+				//获取要操作的元素对象
+				var img=document.getElementById("img1");
+				//显示
+				img.style.display="block";
+				
+				//再通过5秒后来隐藏广告
+				window.setTimeout("hideAdv()",5000);
+			}
+			
+			//隐藏广告
+			function hidAdv(){
+				//获取要操作的元素对象
+				var img=document.getElementById("img1");
+				//隐藏
+				img.style.display="none";//隐藏掉
+			}
+			
+			//页面载入事件
+			function init(){
+				//经过3秒显示广告
+				window.setTimeout("showAdv()",3000);
+			}
+		</script>
+	</head>
+	<body>
+		<img src="" />
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>切换图片</title>
+		<script>
+			function changeImag(){
+				//要获取操作的img标签对象
+				var img=document.getElementById("imag1");
+				//更改图片src属性
+				img.c="img/图片2";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="切换图片" onclick="changeImag()" />
+		<img src="img/图片2" id="img1" />
+	</body>
+</html>

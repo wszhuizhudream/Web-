@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片自动轮播</title>
+		<script>
+			/**
+			 * 页面加载事件：为了执行定时器,setInterval();
+			 */
+			var index=0;
+			function changeImg(){
+			//获取img标签对象
+			var img=document.getElementById("img1");
+			//更改src属性
+			//img.src="img/2.jpg";
+			//img.src="img/"+curIndex+".ipg";
+			var curIndex=index%3+1;
+			img.src="img/"+curIndex+".jpg";
+			index=index+1;
+			}
+			
+			function init(){
+				//开启一个定时任务
+				window.setInterval("changeImg()",3000);
+			}
+		</script>
+	</head>
+	<body onload="init()"><!--页面加载事件-->
+		<img src="img/1.jpg" width="100%" id="img1/>
+	</body>
+</html>

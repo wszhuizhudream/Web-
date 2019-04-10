@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>history对象</title>
+		<script>
+			/**
+			 * forward():载入下一个url
+			 * back():载入上一个url
+			 *go(整数)：装入url代替上面两个方法
+			 */
+			
+			function testForward(){
+				//跳转到目标页面
+				window.history.forward();//--->可以直接被替换掉为window.history.go(1)前进/window.history.go(-1)后退
+			}
+		</script>
+	</head>
+	<body>
+		<a href="02_js的自定义对象.html">跳转</a>
+		<br />
+		<input type="button" value="前进" onclick="testForward()" />
+	</body>
+</html>
