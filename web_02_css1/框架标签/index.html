@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>效果展示</title>
+	</head>
+	<!--
+		
+	body和框架集frameset不能共存
+	
+	属性rows/cols
+	*:当前划分所剩下的权重百分比
+	-->
+	<!--<body>
+	</body>-->
+	<frameset rows="20%,*,10%">
+		<!--注意：一个frame包含一个页面，就是将地址直接写进里面-->
+		<frame src="header.html" />
+		<frameset cols="20%,*">
+			<frame src="menu.html" /><!--显示内容-->
+			<!--
+				frame中src属性：链接当前框架包含的HTML页面
+				       name属性：链所需要的超链接的位置 name属性值要和当前超链接标签的target属性值值一致，否则无效
+				                              点击左边菜单页面：
+				                              a标签target属性
+			-->
+			<frame src="main.html" /><!--左边菜单-->
+		</frameset>
+		<frame src="foot.html" />
+		
+	</frameset>
+</html>
