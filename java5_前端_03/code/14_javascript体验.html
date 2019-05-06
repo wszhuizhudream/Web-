@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js体验</title>
+		<!--定义规则:
+			用户名要符合:4~14位的数字或者字母(不区分大小写)
+		-->
+<script>
+	/*校验用户名*/
+	function checkUserName(){
+		/*获取用户输入的内容*/
+		var username = document.getElementById("username").value;
+	  //用户名要符合:4~14位的数字或者字母(不区分大小写)
+	  var reg = /^[0-9a-zA-Z]{4,14}$/ ;
+	  //开始校验
+	  if(!reg.test(username)){
+	  	alert("用户名格式不正确") ;
+	  	return false ;
+	  }
+	  return true ;
+	  
+	}
+</script>
+	</head>
+	<body>									<!--表示表单提交是否成功:true: 提交了-->
+<form action="backend.html" method="get" onsubmit="return checkUserName()">
+	用户名:<input type="text" name="username" id="username" />
+ <br />
+ <input type="submit" value="注册" />
+</form>
+	</body>
+</html>

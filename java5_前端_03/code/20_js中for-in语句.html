@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>for-in语句</title>
+<script>
+	/**
+	 * js中的for-in语句:类似于java中foreach语句
+	 * java中foreach语句:增强for用来替代iterator
+	 * 
+	 * 格式:
+	 *   for(var 变量名 in 数组名称/具体的对象名称){
+	 *     输出变量   :数组名称[变量名]	
+	 * 
+	 * }
+	 */
+//定义一个数组
+var arr = [10,20,30,40] ;
+//普通for循环
+for(var i = 0 ; i <arr.length ;i++){
+	document.write(arr[i]+"&nbsp;") ;
+}
+document.write("<hr />") ;
+for(var i in arr){
+	alert(arr[i]) ;
+}
+       
+//定义对象: 使用function 对象(形式参数){}
+function Person(name,age){//this:代表当前Person对象地址值的引用
+	this.name = name ;
+	this.age = age ;
+}
+
+//var 定义对象
+var p = new Person("张三",20) ;
+//遍历当前Person中的所有属性
+for(var j in p){
+	document.write(p[j]+"<br />") ;
+}
+</script>
+	</head>
+	<body>
+	</body>
+</html>
