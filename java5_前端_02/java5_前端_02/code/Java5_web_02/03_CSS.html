@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS入门</title>
+		<!--
+			CSS:Cascading style sheet
+			   层叠样式表
+			   
+			   写css样式--为了标签追加修饰,一定是样式库中所定义的样式
+			   在head标签中写style标签/每一个标签中都有style属性
+		-->
+		
+<!--
+	关于样式的引入方式
+		1)行内样式(不推荐)
+		   每一个标签中指定style属性      css属性1:css属性值1;css属性2:css属性值2;
+		  缺点:css样式代码和标签混到一块,不利于后期维护
+	    2)内部方式(讲课过程)
+	    在head标签中指定style标签
+	           选择器{
+	              css属性:css属性值;  	
+	           	
+	          }
+	    3)外部方式(推荐)
+	    需要编写一个外部的css文件,然后导入这个css文件
+	       在head标签中指定link标签 href属性导入外部css文件,
+	          rel:固定写法:关联层叠样表
+	        选择器{
+	        	css属性:css属性值;
+	        }
+-->
+<!--<style type="text/css">-->
+<style>
+	#di2{
+		font-size: 36px;
+		color: #0F0;
+	}
+</style>
+<link href="03.css" rel="stylesheet" />
+
+	</head>
+	<body>
+<div style="color: red; font-size: 26px;">div1</div>
+<div id="di2">div2</div>
+<div id="di3">div3</div>
+	</body>
+</html>

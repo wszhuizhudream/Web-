@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格标签</title>
+		<!--表格标签:
+			table  表格标签
+					属性:border :边框线
+					属性:width/height
+					背景色:bgcolor
+					对其方式:align
+					属性:cellspacing  
+					     单元格边沿和边框线之间的空间
+					属性:cellpadding:单元格和内容的空间
+			tr:行
+			td:单元格
+			th:表头
+			
+			关于单元格合并
+			 合并行:rowspan
+			 合并列:cospan
+			 
+			 
+			 表格标签:默认 拆分
+			 		thead 头 
+			 		tbody 体
+			 		tfoot 脚
+		-->
+		<!--css样式-->
+		<style>
+			/*标签选择器*/
+			tr{
+				/*文本左右对其方式*/
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1px" cellpadding="5" cellspacing="0" width="400px" height="300px" align="center">
+			<!--表格的标题标签-->
+			<caption>xxx学习2019年学生成绩</caption>
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>班级</th>
+				<th>平均分</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td colspan="2">狗蛋</td>
+				<!--<td>软工1班</td>-->
+				<td>75</td> <!--ctrl+shift+r-->
+			</tr>
+			<tr>
+				<td>2</td>
+				<td rowspan="2">狗娃</td>
+				<td>软工1班</td>
+				<td>80</td> <!--ctrl+shift+r-->
+			</tr>
+			<tr>
+				<td>3</td>
+				<!--<td>狗剩</td>-->
+				<td>计算机2班</td>
+				<td>96</td> <!--ctrl+shift+r-->
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>小白</td>
+				<td>软工1班</td>
+				<td>90</td> <!--ctrl+shift+r-->
+			</tr>
+		</table>
+	</body>
+</html>

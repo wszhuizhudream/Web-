@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>表单标签</title>
+	</head>
+	<!--
+		get方式和post方式提交的区别
+		1)get方式提交数据大小有限,一般不超过4kb
+		  get方式提交的数据会显示URL地址栏中,不安全
+		http://localhost:8080/xxx.htmlusername=zhagnsan&password=123456
+		2)post方式: 
+		    提交数据大小无限制
+		  post提交的数据不会展示到地址栏中,
+		             但是网络数据中是可以实体内容
+		     username: lisi 
+             password: 123456
+             
+          
+	-->
+<!--
+关于form表单中常用的表单项
+   文本输入框:input type="text"
+ 密码输入框: input  type="password"
+ 单选按钮:input type="radio"
+ 复选框:inputy type="checkbox"
+下拉菜单:select 
+         option 下拉选项
+文件上传:input type="file"
+文本域:textarea
+隐藏域:<input type="hidden"  没有效果,但是会携带数据
+按钮相关的
+  input type="button" 普通按钮
+  提交   type="submit"
+ 重置  type="reset"
+	
+	
+-->
+	<body>
+		<!--一般情况:name属性必填项: 后台提交的一个标记-->
+<form action="#" method="get">
+用户名:<input type="text" name="username" /><br />
+密&nbsp;&nbsp;码:<input type="password" name="password" /><br />
+性别:
+<!--将当前的内容看成同一组信息 指定相同的name属性-->
+<input type="radio" value="男" name="gender" />男
+<input type="radio" value="女" name="gender" />女<br />
+爱好:
+<!--将当前的内容看成同一组信息 指定相同的name属性
+	checked:属性 true:表示选中,false 不选中
+-->
+<input type="checkbox" checked="checked" name="hobit" value="足球" />足球
+<input type="checkbox" name="hobit" value="篮球" />篮球
+<input type="checkbox" name="hobit" value="乒乓球" />乒乓球
+<br />
+籍贯:
+<select>
+	<option value="---">请选择</option>
+	<option value="陕西省">陕西省</option>
+	<option value="广东省">广东省</option>
+	<option value="山西省">山西省</option>
+</select>
+<br />
+上传照片:
+<input type="file" name="photo" />
+<br />
+自我描述:
+<!--
+	 rows:文本域中行数
+	 cols:一行的字符数
+	
+-->
+<textarea rows="5" cols="20">
+	xxxx
+</textarea>
+<br />
+<!--隐藏域
+	type="hidden"  隐藏携带数据
+-->
+<input type="hidden" name="id" /><br />
+<input type="button" value="普通按钮" />
+<input type="submit" value="注册" />
+<input type="reset" value="重置" />
+</form>
+		
+	</body>
+</html>

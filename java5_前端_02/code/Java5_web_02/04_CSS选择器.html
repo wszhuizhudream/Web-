@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS选择器</title>
+<!--
+	CSS选择器的分类
+			1)标签选择器
+			       样式中写一个元素名称
+			          <style>
+			          	   标签名称{
+			          	   	   css样式;
+			          	   }
+			          </style>
+			    
+			2)类(class)选择器
+				需要在标签中指定class属性
+				   <style>
+			          	   .class属性值{
+			          	   	   css样式;
+			          	   }
+			          </style>
+			      类选择器的优先级>标签选择器  并且,在同一个HTML页面中多个标签是可以指定
+			      同名的class属性
+			3)id选择器(推荐)
+			  在标签中指定一个id属性
+			  <style>
+			          	   #id属性值{
+			          	   	   css样式;
+			          	   }
+			          </style>
+			          
+			     id选择器的优先级最大>class选择器>标签选择器
+			     
+			   注意: 在同一个html页面中,id属性值必须是唯一的,不能重复!
+			   js部分:document.getElementById("id属性值")---
+			                获取标签对象可能获取不到
+			4)并集选择器
+			    选择器1,选择器2{
+			    	css样式;
+			    }
+			5)交集选择器
+			   选择器1 选择器2{   选择器2是选择器1中的子标签
+			   	css样式;
+			   }
+			6)通用选择器
+			     7)伪类选择器(单独讲)
+		
+		
+-->
+<style>
+	/* 标签选择器*/
+	/*div{
+		font-size: 20px;
+		color: #F00;
+	}*/
+	/*类选择器*/
+	/*.di1{
+		font-size: 26px;
+		color: #0F0;
+	}*/
+	/*id选择器*/
+	/*#id2{
+		color: #00F;
+		font-size: 36px;
+	}*/
+	
+	/*并集选择器*/
+	/*.c1,#id3{
+		font-size: 30px;
+		color: #00F;
+	}*/
+	
+	/*交集选择器:后代选择器*/
+	body span{
+		font-size: 28px;
+		color: #0F0;
+	}
+	
+</style>
+	
+	</head>
+	<body>
+<div class="c1">div1的内容<span>span标签的内容</span></div>
+<di id="id2">div2的内容</div>
+<div id="id3">div3的内容</div>
+<span>span标签的内容</span>
+	</body>
+</html>
